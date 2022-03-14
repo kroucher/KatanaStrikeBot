@@ -1,14 +1,13 @@
 module.exports = {
   apps: [
     {
-      name: "app",
+      name: "katanastrikebot",
       script: "./index.js",
-      instances: "max",
-      env: {
-        NODE_ENV: "development",
-      },
       env_production: {
         NODE_ENV: "production",
+      },
+      env_development: {
+        NODE_ENV: "development",
       },
     },
   ],
