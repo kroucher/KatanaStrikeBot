@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 module.exports = (vault) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
       const page = await browser.newPage();
       await Promise.all([
         page.goto(vault, {
