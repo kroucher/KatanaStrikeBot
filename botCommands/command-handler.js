@@ -30,6 +30,7 @@ module.exports = async (client) => {
         if (args[1]) {
           option = args[1].toLowerCase();
           if (option === "call") return;
+          if (option !== "put") return;
           if (vaultItem === "LUNA") putsVault = "WLUNA";
           if (vaultItem === "INJ") putsVault = "WINJ";
           const katanaURL = `https://app.katana.so/options/${option}/${putsVault}`;
@@ -82,6 +83,7 @@ module.exports = async (client) => {
         if (args[1]) {
           option = args[1].toLowerCase();
           if (option === "put") return;
+          if (option !== "call") return;
           if (vaultItem === "LUNA") callsVault = "WLUNA";
           if (vaultItem === "INJ") callsVault = "WINJ";
           const katanaURL = `https://app.katana.so/options/${option}/${callsVault}`;
