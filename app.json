@@ -1,0 +1,24 @@
+{
+  "name": "Katana Strikes",
+  "description": "Discord Bot for Katana vault commands",
+  "keywords": ["katana", "discord", "bot"],
+  "repository": "https://github.com/sir-mr-bean/KatanaStrikeBot",
+  "scripts": {
+    "start": "pm2-runtime start ecosystem.config.js --env production"
+  },
+  "env": {
+    "TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "VAULTURL": {
+      "description": "The URL where the json is stored containing the current vaults for Katana",
+      "value": "https://raw.githubusercontent.com/Katana-Labs/statistics/master/apy/apy.json"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/jontewks/puppeteer.tgz"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ module.exports = (vault) => {
       await page.waitForNetworkIdle(1000);
       let urls = await page.evaluate(() => {
         let results = [];
-        let items = document.querySelectorAll("div.Option--content__item");
+        let items = document.querySelectorAll("div.Option--item__header");
         let images = document.querySelectorAll("img.Option--icon__image");
         items.forEach((item) => {
           results.push({
