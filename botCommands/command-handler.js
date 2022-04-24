@@ -37,9 +37,9 @@ module.exports = async (client) => {
           try {
             const results = await getURL(katanaURL);
             if (results !== null) {
-              strikeResponse = results[1].text.split("\n")[1];
-              priceResponse = results[0].text.split("\n")[1];
-              expiryResponse = results[3].text.split("\n")[1].split(":");
+              strikeResponse = results[1].text;
+              priceResponse = results[0].text;
+              expiryResponse = results[3].text.split(":");
               const embed = new MessageEmbed()
                 .setTitle(`${putsVault.toUpperCase()} Put Vault`)
                 .setThumbnail(results[4].logo)
@@ -90,10 +90,11 @@ module.exports = async (client) => {
           console.log(katanaURL);
           try {
             const results = await getURL(katanaURL);
+            console.log(results);
             if (results !== null) {
-              strikeResponse = results[1].text.split("\n")[1];
-              priceResponse = results[0].text.split("\n")[1];
-              expiryResponse = results[3].text.split("\n")[1].split(":");
+              priceResponse = results[0].text;
+              strikeResponse = results[1].text;
+              expiryResponse = results[3].text.split(":");
               const embed = new MessageEmbed()
                 .setTitle(`${callsVault.toUpperCase()} Covered Call Vault`)
                 .setThumbnail(results[4].logo)

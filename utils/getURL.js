@@ -18,9 +18,11 @@ module.exports = (vault) => {
       await page.waitForNetworkIdle(1000);
       let urls = await page.evaluate(() => {
         let results = [];
-        let items = document.querySelectorAll("div.Option--item__header");
+        let items = document.querySelectorAll("span.Option--item__header");
         let images = document.querySelectorAll("img.Option--icon__image");
+        console.log(items);
         items.forEach((item) => {
+          console.log(item);
           results.push({
             text: item.innerText,
           });
